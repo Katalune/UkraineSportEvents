@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="http://schemas.android.com/tools">
+    <string name="app_name">SportEvents</string>
+    <string name="action_view">Big cards</string>
+    <string name="action_lang">Language (EN)</string>
+    <string name="action_calendar">Add to calendar</string>
+    <string name="action_share">Share</string>
+    <string name="action_username_text">Profile</string>
+
+    <string name="indexed_title_activity_events">Sport Events</string>
+    <string name="load_ok">Loading is complete.</string>
+    <string name="login_validate_text">Validating User…</string>
+    <string name="list_item_more">More</string>
+
+    <string name="title_activity_events">Events</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_webview">Registration</string>
+
+    <string name="profile_rbtn_male_text">M</string>
+    <string name="profile_rbtn_female_text">F</string>
+    <string name="profile_post_success">Uploading is complete.</string>
+    <string name="profile_start_upload_message">Uploading…</string>
+    <string name="profile_userlogout_hint_text">Switch User</string>
+    <string name="profile_attention_text">Please note: Incorrectly specified name, phone number and date of birth may complicate the registration processes for events!</string>
+    <string name="profile_empty_required_error_message">Fill in required fields!</string>
+    <string name="profile_nothing_edited_error_message">No new data for uploading.</string>
+    <string name="profile_notes_text">* Fields marked with an asterisk are required to fill. \n\n~~ Fields marked with a tilde contains unsaved changes. Save your changes (\"Save\" button), or they may be lost during the next data uploading (\"Update\" menu).</string>
+
+    <string name="events_registered">Registered</string>
+
+    <string name="empty_events_download">Downloading…</string>
+    <string name="empty_events_list">No information available.</string>
+    <string name="empty_events_list_no_network">No information available. The network is not available to fetch data.</string>
+    <string name="empty_events_list_server_down">No information available. The server is not returning data.</string>
+    <string name="empty_profile_post_error">Uploading error.</string>
+    <string name="empty_profile_login">Please login.</string>
+    <string name="empty_events_list_server_error">No information available. The server is not returning valid data. Please check for an updated version of the app.</string>
+    <string name="empty_profile_error">No information available. The server is not returning valid profile data.</string>
+    <string name="empty_events_list_bad_network">No information available. The network cannot fetch data from the server.</string>
+    <string name="empty_profile_not_activated">Please, check your email  and follow the link in the browser to activate the account.</string>
+    <string name="empty_profile_field">Fill in your profile required fields!</string>
+
+
+    <string name="detail_registration_label">Registration</string>
+    <string name="detail_buy_label">buy</string>
+    <string name="detail_no_calendar">Can\'t find a calendar app.</string>
+
+    <string name="format_event_reg_end">registration till <xliff:g id="reg_end">%1s</xliff:g></string>
+    <string name="format_event_participants">participants: <xliff:g id="participants">%1s</xliff:g></string>
+    <string name="format_detail_price"><xliff:g id="start_date">%1s</xliff:g> - <xliff:g id="end_daet">%2s</xliff:g>         Price: <xliff:g id="price">%.2f</xliff:g> eur.</string>
+    <string name="profile_about_hint_text">About me</string>
+    <string name="profile_birthday_hint_text">Date of birth</string>
+    <string name="profile_city_hint_text">City</string>
+    <string name="profile_club_hint_text">Club name</string>
+    <string name="profile_country_hint_text">Country</string>
+    <string name="profile_fathername_hint_text">Middle name</string>
+    <string name="profile_firstname_hint_text">Name</string>
+    <string name="profile_gender_hint_text">Sex</string>
+    <string name="profile_lastname_hint_text">Lastname</string>
+    <string name="profile_phone2_hint_text">Phone number in case of an accident</string>
+    <string name="profile_phone_hint_text">Phone number</string>
+    <string name="profile_region_hint_text">Region</string>
+    <string name="profile_size_hint_text">T-shirt size</string>
+</resources>

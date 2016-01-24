@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.android.databinding'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "ua.com.sportevent.sportevent"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions{
+        disable 'MissingTranslation'
+    }
+}
+
+repositories { mavenCentral() }
+
+ext {
+    supportLibVersion = '23.1.1'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support:support-v13:${supportLibVersion}"
+    compile "com.android.support:support-v4:${supportLibVersion}"
+    compile "com.android.support:support-annotations:${supportLibVersion}"
+    compile "com.android.support:design:${supportLibVersion}"
+    compile "com.android.support:cardview-v7:${supportLibVersion}"
+    compile "com.android.support:recyclerview-v7:${supportLibVersion}"
+    compile "com.android.support:percent:${supportLibVersion}"
+    compile 'com.google.android.gms:play-services-gcm:8.3.0'
+    compile 'com.google.android.gms:play-services-appindexing:8.3.0'
+    compile 'com.facebook.android:facebook-android-sdk:4.6.0'
+    compile "com.github.bumptech.glide:glide:3.5.2"
+    compile 'com.facebook.fresco:fresco:0.8.1'
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta3'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta3'
+    compile 'com.squareup.okhttp3:okhttp:3.0.1'
+
+}
+// Fixes bug in Data Binding library
+android.applicationVariants.all { variant ->
+    def variantName = variant.name.capitalize()
+    def inputDir    = "${buildDir}/intermediates/classes/${variant.dirName}"
+    def sourceDir   = "${buildDir}/generated/source/dataBinding/${variant.dirName}"
+    def copyTask    = tasks.create(name: "dataBindingFix${variantName}", type: Copy) {
+        from inputDir
+        into sourceDir
+        include '**/*.java'
+    }
+    tasks["generate${variantName}Sources"].dependsOn copyTask
+    variant.addJavaSourceFoldersToModel new File(sourceDir)
+}

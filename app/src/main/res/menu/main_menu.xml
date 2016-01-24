@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/ic_perm_identity_white_24dp"
+        android:title="@string/action_username_text"
+        app:showAsAction="always|withText"/>
+</menu>

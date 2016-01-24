@@ -1,0 +1,58 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">#2196f3</item>
+        <item name="android:windowBackground">@drawable/bg_bitmap</item>
+    </style>
+
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+        <item name="colorPrimaryDark">@drawable/bg_bitmap</item>
+    </style>
+
+    <!-- On launch don't paint default color on underlying activity.
+    It also mean that underlying activity would be drawn under it always!-->
+    <style name="AppTheme.Transparent">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!-- Body1 text looks small on big screen-->
+    <style name="FontSize" parent="TextAppearance.AppCompat.Body1"/>
+
+    <style name="EventBase">
+        <item name="android:textAppearance">@style/FontSize</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:alpha">@dimen/primary_text_opacity</item>
+    </style>
+
+    <style name="EventBase.ListItem">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginRight">@dimen/gridbase_horizontal_margin</item>
+        <item name="android:textColor">@color/colorIcons</item>
+    </style>
+
+    <style name="EventCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+        <item name="cardBackgroundColor">@color/colorPrimaryLight</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="EventCard.Margin">
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_medium</item>
+        <item name="android:layout_marginBottom">@dimen/margin_medium</item>
+    </style>
+
+</resources>

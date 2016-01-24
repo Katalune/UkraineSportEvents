@@ -1,0 +1,67 @@
+<resources>
+    <!-- Define standard dimensions to comply with Holo-style grids and rhythm. -->
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">32dp</dimen>
+    <dimen name="margin_huge">64dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">@dimen/margin_medium</dimen>
+    <dimen name="activity_vertical_margin">@dimen/margin_medium</dimen>
+    <dimen name="app_bar_height">166dp</dimen>
+    <!--  https://www.google.com/design/spec/layout/structure.html#structure-app-bar -->
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="fab_margin">@dimen/margin_medium</dimen>
+    <dimen name="text_margin">@dimen/margin_medium</dimen>
+    <!-- https://www.google.com/design/spec/what-is-material/elevation-shadows.html#elevation-shadows-elevation-android- -->
+    <dimen name="appbar_elevation">4dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+
+    <!-- list items -->
+    <dimen name="gridbase_horizontal_margin">8dp</dimen>
+    <dimen name="gridbase_vertical_margin">8dp</dimen>
+    <dimen name="gridbase_item_icon_right_margin">32dp</dimen>
+    <dimen name="gridbase_item_height">48dp</dimen>
+
+    <!-- Custom app dimens -->
+    <!-- eventlist screen -->
+    <dimen name="list_item_vertical_margin">2dp</dimen>
+    <dimen name="list_item_horizontal_margin">@dimen/margin_tiny</dimen>
+    <dimen name="list_item_padding">@dimen/margin_small</dimen>
+    <dimen name="list_item_ico_size">24dp</dimen>
+    <dimen name="event_cover_landscape_width">200dp</dimen>
+    <dimen name="list_item_calendar_padding">@dimen/margin_tiny</dimen>
+    <dimen name="list_item_calendar_width">64dp</dimen>
+    <dimen name="list_item_monthtext_size">12dp</dimen>
+    <dimen name="list_item_monthdaytext_size">16dp</dimen>
+    <dimen name="list_item_timetext_size">20dp</dimen>
+
+    <!-- profile screen -->
+    <dimen name="profile_avatar_width">96dp</dimen>
+    <dimen name="profile_avatar_height">96dp</dimen>
+    <dimen name="profile_firstline_margin_top">36dp</dimen>
+    <dimen name="profile_text_size">18sp</dimen>
+    <dimen name="profile_vertical_padding">16dp</dimen>
+    <dimen name="profile_horizontal_padding">16dp</dimen>
+    <dimen name="profile_horizontal_margin">0dp</dimen>
+    <dimen name="profile_vertical_margin">0dp</dimen>
+
+    <dimen name="appbar_text_scrim_height">@dimen/toolbar_height</dimen>
+
+    <!-- detail screen -->
+    <dimen name="detail_discipline_horizontal_margin">16dp</dimen>
+    <dimen name="detail_content_min_height">500dp</dimen>
+    <dimen name="detail_content_horizontal_padding">8dp</dimen>
+    <dimen name="detail_content_vertical_padding">16dp</dimen>
+
+    <!-- webview screen-->
+    <dimen name="webview_description_margin_left">60dp</dimen>
+    <dimen name="webview_description_margin_vertical">16dp</dimen>
+
+    <!-- https://www.google.com/design/spec/style/color.html#color-ui-color-application -->
+    <item name="primary_text_opacity" type="dimen" format="float">0.87</item>
+    <item name="secondary_text_opacity" type="dimen" format="float">0.54</item>
+    <item name="hint_text_opacity" type="dimen" format="float">0.38</item>
+</resources>

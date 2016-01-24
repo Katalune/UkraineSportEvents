@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.an droid.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="event"
+            type="ua.com.sportevent.sportevent.viewModels.EventInfo"/>
+    </data>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/gridbase_horizontal_margin"
+        android:layout_marginTop="@dimen/gridbase_vertical_margin"
+        android:columnCount="2">
+
+        <View
+            android:layout_column="1"
+            android:layout_row="0"
+            android:layout_height="1dp"
+            android:layout_width="0dp"
+            android:layout_gravity="fill"
+            android:background="@color/colorPrimary"/>
+
+        <ImageView
+            android:layout_height="@dimen/gridbase_item_height"
+            android:tint="@color/colorIcons"
+            android:layout_marginRight="@dimen/gridbase_item_icon_right_margin"
+            android:src="@drawable/ic_today_black_24dp"/>
+
+        <!-- use layout_gravity - fill + width = 0dp, otherwise view would be clipped-->
+        <TextView
+            style="@style/EventBase.ListItem"
+            android:text="@{@string/format_event_time(event.startFullDate, event.startTime)}"
+            tools:text="Вторник, 14 Октября, 2015, 10.00" />
+
+        <ImageView
+            android:layout_height="@dimen/gridbase_item_height"
+            android:tint="@color/colorIcons"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_link_black_24dp"/>
+
+        <TextView
+            android:id="@+id/item_organizer"
+            style="@style/EventBase.ListItem"
+            android:text="@{@string/format_event_organizer(event.site, event.organizer)}"
+            android:autoLink="web"
+            tools:text="Ukraine Sport Events" />
+
+        <ImageView
+            android:layout_height="@dimen/gridbase_item_height"
+            android:tint="@color/colorIcons"
+            android:src="@drawable/ic_location_marker"/>
+
+        <TextView
+            android:id="@+id/list_item_location"
+            style="@style/EventBase.ListItem"
+            android:text="@{event.where.length > 0 ? @string/format_event_place(event.city, event.where) : event.city}"
+            tools:text="Харьков"/>
+
+        <LinearLayout
+            android:id="@+id/list_item_participants"
+            android:layout_height="@dimen/gridbase_item_height"
+            android:layout_marginRight="@dimen/gridbase_horizontal_margin">
+
+            <ImageView
+                android:id="@+id/list_item_eventtype_icon_swim"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:tint="@color/colorIcons"
+                android:scaleType="center"
+                app:ico="@{event.icoSwim}"
+                tools:src="@drawable/swim"/>
+
+            <ImageView
+                android:id="@+id/list_item_eventtype_icon_bike"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:tint="@color/colorIcons"
+                app:ico="@{event.icoBike}"
+                tools:src="@drawable/bike"
+                android:scaleType="center" />
+
+            <ImageView
+                android:id="@+id/list_item_eventtype_icon_run"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:tint="@color/colorIcons"
+                app:ico="@{event.icoRun}"
+                tools:src="@drawable/run"
+                android:scaleType="center" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/list_item_eventpartic_textview"
+            style="@style/EventBase.ListItem"
+            android:text="@{@string/format_event_participants(event.participants)}"
+            android:singleLine="true"
+            tools:text="Участников: 3" />
+    </GridLayout>
+</layout>

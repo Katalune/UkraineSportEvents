@@ -1,0 +1,106 @@
+<resources xmlns:xliff="http://schemas.android.com/apk/res-auto">
+    <!--
+         Used in Action Bar, and in AndroidManifest to tell the device the name of this app.
+         It's to keep this short, so your launcher icon isn't displayed with "The greatest Wea"
+         or something similar.
+    -->
+    <string name="app_name">SportEvents</string>
+    
+    <string name="title_activity_events">Мероприятия</string>
+    <string name="title_activity_login">Вход</string>
+    <string name="title_activity_profile">Профиль</string>
+    <string name="title_activity_webview">Регистрация</string>
+
+    <!--
+         By convention, "action" denotes that this String will be used as the label for an Action,
+         typically from the action bar.  The ActionBar is limited real estate, so shorter is better.
+    -->
+    <string name="action_view">Большие карточки</string>
+    <string name="action_share">Поделиться</string>
+    <string name="action_calendar">Добавить в календарь</string>
+    <string name="action_lang">Язык (RU)</string>
+    <string name="action_lang_ru" translatable="false">Русский</string>
+    <string name="action_lang_en" translatable="false">English</string>
+    <string name="action_username_text">Профиль</string>
+
+    <!-- Text for the login screen -->
+    <string name="login_validate_text">Валидация пользователя на сайте.</string>
+
+    <!-- String for the eventlist -->
+    <!-- Used to show number of participants in the event list item. -->
+    <string name="format_event_participants">участников: <xliff:g id="participants">%1s</xliff:g></string>
+    <!-- Show registration end in the event list item -->
+    <string name="format_event_reg_end">регистрация открыта до <xliff:g id="reg_end">%1s</xliff:g></string>
+    <string name="format_event_place" translatable="false"><xliff:g id="city">%1s</xliff:g> (<xliff:g id="where">%2s</xliff:g>)</string>
+    <string name="format_event_organizer" translatable="false"><xliff:g id="site">%1s</xliff:g> - <xliff:g id="organizer">%2s</xliff:g></string>
+    <string name="format_event_time" translatable="false"><xliff:g id="date">%1s</xliff:g>, <xliff:g id="time">%2s</xliff:g></string>
+    <string name="events_registered">Вы уже зарегистрированы</string>
+
+    <!-- formats for the detail screen-->
+    <string name="format_detail_price"><xliff:g id="start_date">%1s</xliff:g> - <xliff:g id="end_daet">%2s</xliff:g>
+        цена: <xliff:g id="price">%.2f</xliff:g> грн.</string>
+    <string name="format_detail_share" translatable="false"><xliff:g id="start_date">%s</xliff:g>:
+        <xliff:g id="event_name">%s</xliff:g> <xliff:g id="event_link">%s</xliff:g></string>
+
+    <!-- web-view screen-->
+    <string name="format_buying_info" translatable="false"><xliff:g id="discipline_name">%1s</xliff:g> / <xliff:g id="package_name">%2s</xliff:g></string>
+
+    <!-- Default layout value for the empty view -->
+    <string name="empty_events_download">Загрузка&#8230;</string>
+    <!-- Show when empty dataset for the eventlist is returning -->
+    <string name="empty_events_list">Информация недоступна.</string>
+    <string name="empty_events_list_no_network">Информация недоступна. Отсутствует интернет подключение.</string>
+    <string name="empty_events_list_server_down">Информация недоступна. Отсутствуют данные с сервера.</string>
+    <string name="empty_events_list_server_error">Информация недоступна. Сервер возвращает некорректные данные. Проверьте наличие обновлений для приложения.</string>
+    <string name="empty_events_list_bad_network">Информация недоступна. Отсутствует соединение с сервером.</string>
+    <!-- Error message for the profile information -->
+    <string name="empty_profile_not_activated">Вам на почту отправлено письмо для активации аккаунта. Пройдите по указанной в письме ссылке в браузере.</string>
+    <string name="empty_profile_post_error">Ошибка загрузки данных.</string>
+    <string name="empty_profile_error">Ошибка сервера при получении данных профиля.</string>
+    <!-- Error message for the login information -->
+    <string name="empty_profile_login">Авторизуйтесь</string>
+    <!-- Error message for buying activity-->
+    <string name="empty_profile_field">Заполните обязательные поля в профиле.</string>
+    <!-- Message when load status is ok -->
+    <string name="load_ok">Загрузка завершена.</string>
+    <string name="list_item_more">Подробнее</string>
+
+    <!-- Text shown in the profile screen-->
+    <string name="profile_rbtn_male_text">М</string>
+    <string name="profile_rbtn_female_text">Ж</string>
+    <string name="profile_rbtn_tshirt_XS" translatable="false">XS</string>
+    <string name="profile_rbtn_tshirt_S" translatable="false">S</string>
+    <string name="profile_rbtn_tshirt_M" translatable="false">M</string>
+    <string name="profile_rbtn_tshirt_L" translatable="false">L</string>
+    <string name="profile_rbtn_tshirt_XL" translatable="false">XL</string>
+    <string name="profile_rbtn_tshirt_XXL" translatable="false">XXL</string>
+    <string name="profile_post_success">Загрузка на сервер завершена.</string>
+    <string name="profile_firstname_hint_text">Имя</string>
+    <string name="profile_fathername_hint_text">Отчество</string>
+    <string name="profile_lastname_hint_text">Фамилия</string>
+    <string name="profile_gender_hint_text">Пол</string>
+    <string name="profile_birthday_hint_text">Дата рождения</string>
+    <string name="profile_phone_hint_text">Контактный телефон</string>
+    <string name="profile_phone2_hint_text">Телефон при несчастном случае</string>
+    <string name="profile_size_hint_text">Размер футболки</string>
+    <string name="profile_club_hint_text">Название клуба</string>
+    <string name="profile_country_hint_text">Страна</string>
+    <string name="profile_region_hint_text">Область</string>
+    <string name="profile_city_hint_text">Город</string>
+    <string name="profile_about_hint_text">Кратко о себе</string>
+    <string name="profile_userlogout_hint_text">Смена пользователя</string>
+    <string name="profile_attention_text">Обратите внимание: Неправильно указанное имя, фамилия, телефон и дата рождения могут затруднить процес регистрации на мероприятия!</string>
+    <string name="profile_notes_text">* Поля, отмеченные звездочкой, являются обязательными для заполнения.\n\n~~ Поля с изменениями отмечаются тильдой. Сохраните изменения (кнопка \"Сохранить\"), иначе они могут быть утеряны при следующем обновлении данных с сервера (меню \"Обновить\").</string>
+    <string name="profile_empty_required_error_message">Заполните обязательные поля!</string>
+    <string name="profile_nothing_edited_error_message">Нет новых данных для отправки на сервер.</string>
+    <string name="profile_start_upload_message">Загрузка на сервер…</string>
+
+    <!-- Titles to show in the autocompletion results-->
+    <string name="indexed_title_activity_events">Спортивные мероприятия</string>
+
+    <!-- Text shown in the detail screen-->
+    <string name="detail_no_calendar">Календарь на телефоне не найден.</string>
+    <string name="detail_registration_label">Регистрация</string>
+    <string name="detail_buy_label">купить</string>
+
+</resources>

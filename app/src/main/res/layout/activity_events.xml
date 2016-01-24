@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_coordinator"
+    android:layout_width="match_parent"  android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="ua.com.sportevent.sportevent.EventsActivity">
+
+    <include
+        layout="@layout/cardview_empty_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_gravity="top"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/activity_main_swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_eventlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:clipToPadding="false"
+            app:layoutManager="StaggeredGridLayoutManager"
+            app:spanCount="@integer/events_columns"
+            tools:context="ua.com.sportevent.sportevent.EventsActivity" />
+        <!-- Number of columns depends of numbers from resource - diff for diff layout.-->
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <include layout="@layout/app_bar_large"
+        android:id="@+id/app_bar" />
+</android.support.design.widget.CoordinatorLayout>

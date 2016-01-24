@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">64dp</dimen>
+    <!-- detail screen -->
+    <dimen name="detail_content_horizontal_padding">32dp</dimen>
+    <dimen name="detail_content_vertical_padding">24dp</dimen>
+
+    <!-- webview screen-->
+    <dimen name="webview_description_margin_left">69dp</dimen>
+    <dimen name="webview_description_margin_vertical">24dp</dimen>
+</resources>

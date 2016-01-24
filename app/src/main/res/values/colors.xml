@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorGrey800</color>
+    <color name="colorPrimaryDark">@color/colorGrey900</color>
+    <color name="colorAccent">@color/colorBlue</color>
+    <color name="colorPrimaryLight">@color/colorGrey50</color>
+    <color name="colorAccentLight">@color/colorBlue50</color>
+    <color name="colorAccentMedium">@color/colorBlue400</color>
+    <color name="colorAccentDark">@color/colorBlue900</color>
+    <color name="colorAccent2">@color/colorAmber400</color>
+    <color name="colorRed">@color/colorRedA200</color>
+    <color name="colorIcons">@color/colorGrey800</color>
+
+    <color name="colorRedA200">#FF5252</color>
+    <color name="colorAmber400">#FFCA28</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorGrey50">#FAFAFA</color>
+    <color name="colorGrey500">#9E9E9E</color>
+    <color name="colorGrey700">#616161</color>
+    <color name="colorGrey800">#424242</color>
+    <color name="colorGrey900">#212121</color>
+    <color name="colorBlue50">#E3F2FD</color>
+    <color name="colorBlue">#2196F3</color>
+    <color name="colorBlue400">#42A5F5</color>
+    <color name="colorBlue900">#0D47A1</color>
+    <color name="colorBlueA700">#2962FF</color>
+
+</resources>

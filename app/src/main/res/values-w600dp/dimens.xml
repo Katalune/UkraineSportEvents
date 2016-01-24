@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_height">48dp</dimen>
+
+    <dimen name="profile_horizontal_padding">80dp</dimen>
+
+    <!-- detail screen -->
+    <dimen name="detail_content_horizontal_padding">16dp</dimen>
+    <dimen name="detail_discipline_horizontal_margin">80dp</dimen>
+</resources>

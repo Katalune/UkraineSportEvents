@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="event" type="ua.com.sportevent.sportevent.viewModels.EventInfo"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/list_item_padding"
+        android:paddingRight="@dimen/list_item_padding"
+        android:orientation="vertical"
+        tools:showIn="@layout/list_item_event_large">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="@{event.name}"
+            tools:text="Харьковский международный марафон" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textAppearance="@style/FontSize"
+            android:lineSpacingMultiplier="1.2"
+            android:textColor="@color/colorPrimaryDark"
+            android:alpha="@dimen/primary_text_opacity"
+            android:text="@{event.description}"
+            tools:text="Беговые\n состязания\n в трех \nвесовых\n\n\n группах." />
+    </LinearLayout>
+</layout>

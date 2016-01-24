@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="event"
+            type="ua.com.sportevent.sportevent.viewModels.EventInfo"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/list_item_padding"
+        android:padding="@dimen/list_item_padding">
+
+        <TextView
+            android:id="@+id/list_item_eventmonth_textview"
+            android:layout_width="@dimen/list_item_calendar_width"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_large"
+            android:gravity="center_horizontal"
+            android:background="@color/colorGrey800"
+            android:textColor="@color/colorWhite"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:text="@{event.startMonth}"
+            android:singleLine="true"
+            tools:text="Окт."/>
+
+        <TextView
+            android:id="@+id/list_item_eventmonthday_textview"
+            android:layout_width="@dimen/list_item_calendar_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/list_item_eventmonth_textview"
+            android:layout_alignLeft="@id/list_item_eventmonth_textview"
+            android:padding="@dimen/list_item_calendar_padding"
+            android:layout_marginRight="@dimen/list_item_padding"
+            android:background="@drawable/list_item_calendarfooter"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/colorGrey800"
+            android:text="@{event.startDay}"
+            android:singleLine="true"
+            tools:text="31"/>
+
+        <TextView
+            android:id="@+id/item_organizer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/list_item_eventmonth_textview"
+            android:layout_toRightOf="@id/list_item_eventmonth_textview"
+            android:singleLine="true"
+            style="@style/EventBase"
+            android:fontFamily="sans-serif-medium"
+            android:text="@{@string/format_event_organizer(event.site, event.organizer)}"
+            android:autoLink="web"
+            android:drawableLeft="@drawable/ic_link_black_24dp"
+            android:drawablePadding="@dimen/list_item_padding"
+            tools:text="Ukraine Sport Events" />
+
+        <TextView
+            android:id="@+id/list_item_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_organizer"
+            android:layout_marginBottom="@dimen/list_item_padding"
+            android:layout_marginTop="@dimen/list_item_padding"
+            android:layout_alignLeft="@id/item_organizer"
+            android:drawableLeft="@drawable/ic_location_marker"
+            android:drawablePadding="@dimen/list_item_padding"
+            style="@style/EventBase"
+            android:text="@{event.where.length > 0 ? @string/format_event_place(event.city, event.where) : event.city}"
+            tools:text="Харьков"
+            android:layout_gravity="bottom" />
+
+        <LinearLayout
+            android:id="@+id/list_item_participants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/list_item_location"
+            android:layout_alignLeft="@id/list_item_location">
+
+            <ImageView
+                android:id="@+id/list_item_eventtype_icon_swim"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                app:ico="@{event.icoSwim}"
+                tools:src="@drawable/swim"/>
+
+            <ImageView
+                android:id="@+id/list_item_eventtype_icon_bike"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:ico="@{event.icoBike}"
+                tools:src="@drawable/bike"
+                android:scaleType="center" />
+
+            <ImageView
+                android:id="@+id/list_item_eventtype_icon_run"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:ico="@{event.icoRun}"
+                tools:src="@drawable/run"
+                android:scaleType="center" />
+
+            <TextView
+                android:id="@+id/list_item_eventpartic_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/list_item_padding"
+                style="@style/EventBase"
+                android:text="@{@string/format_event_participants(event.participants)}"
+                android:singleLine="true"
+                tools:text="Участников: 3" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/list_item_eventtime_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_item_eventmonthday_textview"
+            android:layout_alignRight="@+id/list_item_eventmonthday_textview"
+            android:layout_alignLeft="@+id/list_item_eventmonthday_textview"
+            android:layout_alignBottom="@+id/list_item_participants"
+            android:gravity="bottom|center_horizontal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@color/colorGrey800"
+            android:text="@{event.startTime}"
+            android:singleLine="true"
+            tools:text="07:00"/>
+    </RelativeLayout>
+</layout>

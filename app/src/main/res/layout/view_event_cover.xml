@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="event" type="ua.com.sportevent.sportevent.viewModels.EventInfo"/>
+    </data>
+
+
+    <android.support.percent.PercentFrameLayout
+        android:id="@+id/eventcover_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:showIn="@layout/list_item_event_large">
+
+            <ImageView
+                android:id="@+id/eventcover_img"
+                app:layout_widthPercent="100%"
+                app:layout_aspectRatio="177%"
+                android:adjustViewBounds="true"
+                app:coverImg="@{event.cover}"
+                tools:src="@drawable/logo" />
+    </android.support.percent.PercentFrameLayout>
+</layout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <include
+        layout="@layout/cardview_empty_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_gravity="top"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/detail_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:clipToPadding="false"
+        app:layoutManager="StaggeredGridLayoutManager"
+        app:spanCount="@integer/events_columns"
+        app:stackFromEnd="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="ua.com.sportevent.sportevent.DetailActivity" />
+
+    <include
+        layout="@layout/app_bar_large" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_local_offer_white_24dp"
+        android:onClick="scrollDown"
+        app:layout_behavior="ua.com.sportevent.sportevent.behaviors.ScrollingFABBehavior" />
+
+</android.support.design.widget.CoordinatorLayout>

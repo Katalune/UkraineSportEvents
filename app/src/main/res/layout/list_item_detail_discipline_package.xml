@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="dPackage"
+            type="ua.com.sportevent.sportevent.viewModels.EventPackage"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/gridbase_horizontal_margin">
+        <View
+            android:id="@+id/discipline_delimeter"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/list_item_padding"
+            android:background="@color/colorGrey500"/>
+        <TextView
+            android:id="@+id/discipline_package_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/list_item_padding"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@{dPackage.name}"
+            android:drawableLeft="@drawable/ic_local_mall_24dp"
+            android:drawablePadding="@dimen/list_item_padding"
+            tools:text="Grand Prix STANDARD"/>
+        <TextView
+            android:id="@+id/discipline_package_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/list_item_padding"
+            android:lineSpacingMultiplier="1.5"
+            android:text="@{dPackage.content}"
+            android:textAppearance="@style/FontSize"
+            app:viewVisibility="@{dPackage.content}"
+            tools:text="чип, рюкзак, шапочка для плавания, медаль, футболка, pasta-party, браслет, электронный диплом финишёра"/>
+        <TextView
+            android:id="@+id/discipline_date_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/list_item_padding"
+            android:lineSpacingMultiplier="1.5"
+            android:textAppearance="@style/FontSize"
+            android:text="@{dPackage.datePrice}"
+            tools:text="С 12.10.15 По 29.02.16 Цена:	555.00 грн.
+С 01.03.16 По 31.07.16 Цена:	666.00 грн."/>
+        <Button
+            android:id="@+id/discipline_button_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:text="@string/detail_buy_label"
+            android:onClick="buyPackage"
+            android:textColor="@android:color/white"
+            app:viewEnabled="@{dPackage.buttonActive}"/>
+
+    </LinearLayout>
+
+</layout>

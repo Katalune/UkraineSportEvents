@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="user" type="ua.com.sportevent.sportevent.viewModels.UserProfile"/>
+    </data>
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/profile_coordinator"
+        android:layout_width="match_parent"  android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <include layout="@layout/app_bar_large"
+                 android:id="@+id/app_bar"/>
+
+        <include
+            layout="@layout/cardview_empty_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:layout_gravity="top"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/profile_nestedscroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:visibility="gone">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/profile_vertical_margin"
+                android:layout_marginBottom="@dimen/profile_vertical_margin"
+                android:layout_marginLeft="@dimen/profile_horizontal_margin"
+                android:layout_marginRight="@dimen/profile_horizontal_margin"
+                app:contentPaddingTop="@dimen/profile_vertical_padding"
+                app:contentPaddingBottom="@dimen/profile_vertical_padding"
+                app:contentPaddingLeft="@dimen/profile_horizontal_padding"
+                app:contentPaddingRight="@dimen/profile_horizontal_padding"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/colorPrimaryLight"
+                app:cardElevation="@dimen/card_elevation">
+
+                <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Attention -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/profile_firstline_margin_top"
+                    android:layout_marginBottom="@dimen/list_item_padding"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/profile_attention_text"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+
+                <!-- first name -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint='@{user.firstNameLabel}'>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:singleLine="true"
+                        android:text='@{user.firstName}'
+                        app:addChangeListener='@{user.firstNameField}'/>
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- father name -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint='@{user.fatherNameLabel}'>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:singleLine="true"
+                        android:text='@{user.fatherName}'
+                        app:addChangeListener='@{user.fatherNameField}'/>
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- last name -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint='@{user.lastNameLabel}'>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:singleLine="true"
+                        android:text='@{user.lastName}'
+                        app:addChangeListener='@{user.lastNameField}'/>
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- gender -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text='@{user.genderLabel}'
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_small">
+                    <RadioButton
+                        android:id="@+id/profile_position_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_rbtn_male_text"
+                        app:addChangeListener="@{user.genderField}"
+                        app:checked='@{user.male}'/>
+
+                    <RadioButton
+                        android:id="@+id/profile_position_woman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_rbtn_female_text"
+                        app:addChangeListener="@{user.genderField}"
+                        app:checked="@{user.woman}"/>
+                </RadioGroup>
+
+                <!-- birthday-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:text='@{user.birthDayLabel}'/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:paddingBottom="@dimen/margin_small"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textSize="@dimen/profile_text_size"
+                    android:text='@{user.birthDate}'
+                    android:onClick='@{user.calendarToggle}'/>
+
+                <!-- phone number-->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/profile_phone_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint='@{user.phoneLabel}'>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:text='@{user.phoneNumber}'
+                        app:addChangeListener='@{user.phoneNumberField}' />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- phone number 2-->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint='@{user.phone2Label}'>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:text='@{user.phoneNumber2}'
+                        app:addChangeListener='@{user.phoneNumber2Field}' />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- t-shirt size-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text='@{user.sizeLabel}'
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"/>
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_small">
+
+                    <RadioButton
+                        android:id="@+id/profile_size_xs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_rbtn_tshirt_XS"
+                        app:addChangeListener="@{user.sizeField}"
+                        app:checked='@{user.xs}'/>
+
+                    <RadioButton
+                        android:id="@+id/profile_size_s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_rbtn_tshirt_S"
+                        app:addChangeListener="@{user.sizeField}"
+                        app:checked='@{user.s}'/>
+
+                    <RadioButton
+                        android:id="@+id/profile_size_m"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_rbtn_tshirt_M"
+                        app:addChangeListener="@{user.sizeField}"
+                        app:checked='@{user.m}'/>
+
+                    <RadioButton
+                        android:id="@+id/profile_size_l"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_rbtn_tshirt_L"
+                        app:addChangeListener="@{user.sizeField}"
+                        app:checked='@{user.l}'/>
+
+                    <RadioButton
+                        android:id="@+id/profile_size_xl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_rbtn_tshirt_XL"
+                        app:addChangeListener="@{user.sizeField}"
+                        app:checked='@{user.xl}'/>
+
+                    <RadioButton
+                        android:id="@+id/profile_size_xxl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_rbtn_tshirt_XXL"
+                        app:addChangeListener="@{user.sizeField}"
+                        app:checked='@{user.xxl}'/>
+                </RadioGroup>
+
+                <!-- Club-->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint='@{user.clubLabel}'>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textShortMessage"
+                        android:singleLine="true"
+                        android:text='@{user.club}'
+                        app:addChangeListener='@{user.clubField}' />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- Country-->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint='@{user.countryLabel}'>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPostalAddress"
+                        android:singleLine="true"
+                        android:text='@{user.country}'
+                        app:addChangeListener='@{user.countryField}' />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- Region-->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint='@{user.regionLabel}'>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textShortMessage"
+                        android:singleLine="true"
+                        android:text='@{user.region}'
+                        app:addChangeListener='@{user.regionField}' />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- City-->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint='@{user.cityLabel}'>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPostalAddress"
+                        android:singleLine="true"
+                        android:text='@{user.city}'
+                        app:addChangeListener='@{user.cityField}' />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- About -->
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint='@{user.aboutLabel}'>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:text='@{user.about}'
+                        app:addChangeListener='@{user.aboutField}' />
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- Notes -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/profile_notes_text"/>
+
+                <!-- Log out-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/margin_tiny"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:text="@string/profile_userlogout_hint_text"/>
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/login_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/margin_medium"/>
+
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_save_white_24dp"
+            android:onClick="saveInfo"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <!-- cover image-->
+        <android.support.v7.widget.CardView
+            android:layout_width="@dimen/profile_avatar_width"
+            android:layout_height="@dimen/profile_avatar_width"
+            android:layout_margin="@dimen/fab_margin"
+            app:cardPreventCornerOverlap="false"
+            app:cardElevation="@dimen/fab_elevation"
+            app:layout_anchor="@id/profile_nestedscroll"
+            app:layout_anchorGravity="top|end"
+            app:layout_behavior="ua.com.sportevent.sportevent.behaviors.HidingViewBehavior" >
+            
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:imageURI="@{user.loadAvatar}"
+                app:roundAsCircle="false"/>
+        </android.support.v7.widget.CardView>
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

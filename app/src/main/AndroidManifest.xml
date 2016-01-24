@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="ua.com.sportevent.sportevent" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- GCM permissions -->
+    <!-- Keep the processor from sleeping when you receive a message. Because we use
+    a wakeful broadcast receiver.-->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- Allows our app to register to receive messages from GCM. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="ua.com.sportevent.sportevent.permission.C2D_MESSAGE"/>
+    <permission android:name="ua.com.sportevent.sportevent.permission.C2D_MESSAGE"
+                android:protectionLevel="signature"/>
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:allowBackup="false"
+        android:theme="@style/AppTheme" >
+        <!-- Facebook related data -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <!-- app-indexing-->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".EventsActivity"
+                  android:launchMode="singleTop"
+                  android:label="@string/title_activity_events"
+                  android:theme="@style/AppTheme.Launcher">
+            <intent-filter
+                android:label="@string/app_name">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DetailActivity"
+                  android:launchMode="singleTask"
+                  android:parentActivityName=".EventsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".EventsActivity" />
+            <intent-filter>
+                <!-- The intent filter can be reached from Google Search.-->
+                <action android:name="android.intent.action.VIEW" />
+                <!-- Declares the app can accept an implicit intent.-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- Required to execute the intent from within Google Search results. -->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://sportevent.com.ua/" -->
+                <data android:scheme="http"
+                      android:host="sportevent.com.ua"
+                      android:pathPrefix="/events" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".WebViewActivity"
+                  android:label="@string/title_activity_webview"
+                  android:configChanges="orientation|screenSize"
+                  android:noHistory="true"
+                  android:parentActivityName=".DetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DetailActivity"    />
+        </activity>
+        <!-- KEEP LOGIN IN HISTORY FOR FB LOGIN TO RETURN-->
+        <activity android:name=".LoginActivity"
+                  android:theme="@style/AppTheme.Transparent"
+                  android:noHistory="false"
+                  android:label="@string/title_activity_login">
+            <intent-filter>
+                <!-- The intent filter can be reached from Google Search.-->
+                <action android:name="android.intent.action.VIEW" />
+                <!-- Declares the app can accept an implicit intent.-->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- Required to execute the intent from within Google Search results. -->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://sportevent.com.ua/" -->
+                <data android:scheme="http"
+                      android:host="sportevent.com.ua"
+                      android:pathPrefix="/users" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ProfileActivity"
+                  android:launchMode="singleTask"
+                  android:label="@string/title_activity_profile">
+        </activity>
+        <activity android:name="com.facebook.FacebookActivity"
+                  android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- Handles messages sent from GCM to your application -->
+        <receiver android:name="com.google.android.gms.gcm.GcmReceiver"
+                  android:exported="true"
+                  android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="ua.com.sportevent.sportevent"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+            </intent-filter>
+        </receiver>
+        <!-- Enables various aspects of handling messages -->
+        <service android:name=".gcm.EventsGcmListenerService"
+                 android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <!-- Handle the creation, rotation, and updating of registration tokens -->
+        <service android:name=".gcm.EventsInstanceIDListenerService"
+                 android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+
+        <service android:name=".gcm.RegistrationIntentService"
+                 android:exported="false"/>
+    </application>
+
+</manifest>

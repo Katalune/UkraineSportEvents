@@ -1,0 +1,10 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+/app/src/main/res/values/app_id.xml
+/app/google-services.json
+/app/src/main/java/ua/com/sportevent/sportevent/serverData/ServerContract.java

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="event"
+            type="ua.com.sportevent.sportevent.viewModels.EventInfo"/>
+    </data>
+    <android.support.v7.widget.CardView
+        android:id="@+id/list_item_root_cardview"
+        style="@style/EventCard.Margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:minHeight="?android:attr/listPreferredItemHeight">
+
+            <include
+                layout="@layout/textview_event_regend"
+                app:event="@{event}"/>
+
+            <include
+                layout="@layout/view_event_cover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/list_item_padding"
+                app:event="@{event}" />
+
+            <include
+                layout="@layout/view_event_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/list_item_padding"
+                app:event="@{event}"/>
+
+            <include layout="@layout/view_event_more" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>
